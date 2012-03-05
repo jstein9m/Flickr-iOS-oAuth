@@ -3,7 +3,7 @@
 //  FlickrDemo
 //
 //  Created by Joseph Stein on 1/8/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 9mmedia. All rights reserved.
 //
 
 #import "RXViewController.h"
@@ -21,17 +21,6 @@ static NSString* kCallbackURL = @"http://www.9mmedia.com";
 
 @implementation RXViewController
 
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc
-{
-  [_flickrAccount release];
-  [super dealloc];
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -44,12 +33,28 @@ static NSString* kCallbackURL = @"http://www.9mmedia.com";
 
 - (void)viewDidUnload
 {
+  [_webView release];
+  _webView = nil;
+  
   [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc
+{
+  [_flickrAccount release];
+  [_webView release];
+  
+  [super dealloc];
 }
 
 #pragma mark - Action Methods
