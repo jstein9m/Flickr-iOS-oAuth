@@ -18,6 +18,8 @@ To build and run the sample application with Xcode:
 
 * Verify your compiler settings by checking the menu items under _Project_->_Set Active SDK_ and _Project_->_Set Active Executable_. For most developers, the defaults should be OK.
 
+* Replace kConsumerKey, KConsumerSecret, & kCallbackURL in RXViewController.m with your Flickr App credentials
+
 * Finally, select _Build_->_Build and Run_. This should compile the application and launch it.
 
 

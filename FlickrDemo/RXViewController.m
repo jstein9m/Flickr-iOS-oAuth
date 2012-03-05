@@ -8,9 +8,9 @@
 
 #import "RXViewController.h"
 
-static NSString* kConsumerKey = @"e91d24c65c947c5c0c1ac54e98594dc6";
-static NSString* kConsumerSecret = @"d33b149d60c966f6";
-static NSString* kCallbackURL = @"http://www.9mmedia.com";
+static NSString* kConsumerKey = @"INSERT_CONSUMER_KEY";
+static NSString* kConsumerSecret = @"INSERT_CONSUMER_SECRET";
+static NSString* kCallbackURL = @"INSERT_CALLBACK_URL";
 
 @interface RXViewController () {
   RXFlickr* _flickrAccount;
@@ -26,6 +26,10 @@ static NSString* kCallbackURL = @"http://www.9mmedia.com";
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  NSAssert(![kConsumerKey isEqualToString:@"INSERT_CONSUMER_KEY"], @"Invalid Consumer Key");
+  NSAssert(![kConsumerSecret isEqualToString:@"INSERT_CONSUMER_SECRET"], @"Invalid Consumer Secret");
+  NSAssert(![kCallbackURL isEqualToString:@"INSERT_CALLBACK_URL"], @"Invalid Callback Url");
   
   _flickrAccount = [[RXFlickr alloc] initWithConsumerKey:kConsumerKey secret:kConsumerSecret callbackURL:kCallbackURL];
   [_flickrAccount setDelegate:self];
